@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monthly Reports</title>
+    <link rel="stylesheet" href="../styles/monthly-reports.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Monthly Reports</h1>
+      <button id="back-to-dashboard">Back to Dashboard</button>
+    </header>
+    <main>
+      <section id="filters">
+        <h2>Filters</h2>
+        <div>
+          <label for="budget-filter">Budget:</label>
+          <select id="budget-filter">
+            <option value="">All</option>
+            <!-- Options will be dynamically loaded -->
+          </select>
+        </div>
+        <div>
+          <label for="category-filter">Category:</label>
+          <select id="category-filter">
+            <option value="">All</option>
+            <!-- Options will be dynamically loaded -->
+          </select>
+        </div>
+        <button id="apply-filters">Apply Filters</button>
+      </section>
+      <section id="monthly-reports">
+        <h2>Report Summary</h2>
+        <div id="report-list">
+          <!-- Monthly reports will be dynamically generated here -->
+        </div>
+      </section>
+    </main>
+    <script src="../scripts/monthly-reports.js"></script>
+  </body>
+</html>

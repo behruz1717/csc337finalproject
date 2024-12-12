@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messaging</title>
+    <link rel="stylesheet" href="../styles/messaging.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Messaging</h1>
+      <button id="back-to-dashboard">Back to Dashboard</button>
+    </header>
+    <main>
+      <section id="compose-message">
+        <h2>Compose New Message</h2>
+        <form id="compose-form">
+          <label for="receiver">To:</label>
+          <input
+            type="text"
+            id="receiver"
+            name="receiver"
+            placeholder="Recipient's username"
+            required
+          />
+          <label for="message-content">Message:</label>
+          <textarea
+            id="message-content"
+            name="message-content"
+            rows="5"
+            required
+          ></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+      <section id="inbox">
+        <h2>Inbox</h2>
+        <div id="inbox-messages">
+          <!-- Inbox messages will be dynamically loaded here -->
+        </div>
+      </section>
+      <section id="sent">
+        <h2>Sent Messages</h2>
+        <div id="sent-messages">
+          <!-- Sent messages will be dynamically loaded here -->
+        </div>
+      </section>
+    </main>
+    <script src="../scripts/messaging.js"></script>
+  </body>
+</html>

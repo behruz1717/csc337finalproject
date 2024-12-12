@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Details</title>
+    <link rel="stylesheet" href="../styles/budget-details.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Budget Details</h1>
+      <button id="back-to-dashboard">Back to Dashboard</button>
+    </header>
+    <main id="budget-details-container">
+      <!-- Budget details will be dynamically loaded here -->
+    </main>
+
+    <!-- Edit Budget Modal -->
+    <div id="edit-budget-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-edit-budget-modal" class="close">&times;</span>
+        <h2>Edit Budget</h2>
+        <form id="edit-budget-form">
+          <label for="edit-budget-name">Budget Name</label>
+          <input type="text" id="edit-budget-name" required />
+
+          <label for="edit-budget-goal">Goal Amount</label>
+          <input type="number" id="edit-budget-goal" required />
+
+          <button type="submit">Save Changes</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Add/Edit Expense Modal -->
+    <div id="expense-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-expense-modal" class="close">&times;</span>
+        <h2 id="expense-modal-title">Add Expense</h2>
+        <form id="expense-form">
+          <label for="expense-amount">Amount</label>
+          <input type="number" id="expense-amount" required />
+
+          <label for="expense-category">Category</label>
+          <input type="text" id="expense-category" required />
+
+          <label for="expense-description">Description</label>
+          <textarea id="expense-description"></textarea>
+
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="../scripts/budget-details.js"></script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../styles/dashboard.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/pages/dashboard.html">Dashboard</a></li>
+        <li><a href="/pages/messaging.html">Messaging</a></li>
+        <li><a href="/pages/archived-budgets.html">Archived Budgets</a></li>
+        <li><a href="/pages/monthly-reports.html">Monthly Reports</a></li>
+        <li><a href="/pages/settings.html">Settings</a></li>
+        <li><a id="logout-btn" href="#">Logout</a></li>
+      </ul>
+    </nav>
+    <header>
+      <h1>Dashboard</h1>
+    </header>
+
+    <main>
+      <!-- Quick Actions -->
+      <section id="quick-actions">
+        <button id="add-budget-btn">Add Budget</button>
+      </section>
+
+      <!-- Budgets and Expenses Section -->
+      <section id="budgets-container">
+        <h2>Your Budgets</h2>
+        <div id="budgets-list">
+          <!-- Budgets will be dynamically loaded here -->
+          <p>Loading budgets...</p>
+        </div>
+      </section>
+    </main>
+
+    <div id="add-budget-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-modal" class="close">&times;</span>
+        <h2>Add New Budget</h2>
+        <form id="add-budget-form">
+          <input
+            type="text"
+            id="budget-name"
+            placeholder="Budget Name"
+            required
+          />
+          <input
+            type="number"
+            id="budget-goal"
+            placeholder="Goal Amount"
+            required
+          />
+          <button type="submit">Create Budget</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>Budgeting App &copy; 2024</p>
+    </footer>
+
+    <script src="../scripts/dashboard.js"></script>
+  </body>
+</html>
