@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../styles/dashboard.css" />
+    <link rel="stylesheet" href="../styles/dashboard.css">
   </head>
   <body>
     <nav>
@@ -23,18 +23,18 @@
 
     <main>
       <!-- Quick Actions -->
-      <section id="quick-actions">
+      <div id="quick-actions">
         <button id="add-budget-btn">Add Budget</button>
-      </section>
+      </div>
 
       <!-- Budgets and Expenses Section -->
-      <section id="budgets-container">
+      <div id="budgets-container">
         <h2>Your Budgets</h2>
         <div id="budgets-list">
           <!-- Budgets will be dynamically loaded here -->
           <p>Loading budgets...</p>
         </div>
-      </section>
+      </div>
     </main>
 
     <div id="add-budget-modal" class="modal">
@@ -47,21 +47,18 @@
             id="budget-name"
             placeholder="Budget Name"
             required
-          />
+          >
           <input
             type="number"
             id="budget-goal"
             placeholder="Goal Amount"
             required
-          />
+          >
           <button type="submit">Create Budget</button>
         </form>
       </div>
     </div>
 
-    <footer>
-      <p>Budgeting App &copy; 2024</p>
-    </footer>
 
     <script src="../scripts/dashboard.js"></script>
   </body>
