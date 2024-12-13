@@ -4,9 +4,10 @@ document
     e.preventDefault();
     const username = document.getElementById("username").value;
     const messageElement = document.getElementById("message");
+    const BASE_URL = "http://143.198.59.70:80";
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/register", {
+      const response = await fetch(`${BASE_URL}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username }),

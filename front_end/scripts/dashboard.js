@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const addBudgetForm = document.getElementById("add-budget-form");
   const logoutBtn = document.getElementById("logout-btn");
   const username = localStorage.getItem("username");
+   
+  const BASE_URL = "http://143.198.59.70:80";
 
   if (!username) {
     alert("No user logged in. Redirecting to login page.");
@@ -16,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function fetchBudgets() {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/dashboard?username=${username}`
+        `${BASE_URL}/api/dashboard?username=${username}`
       );
       const data = await response.json();
 
@@ -81,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const goalAmount = parseFloat(document.getElementById("budget-goal").value);
 
     try {
-      const response = await fetch("http://localhost:5000/api/budgets", {
+      const response = await fetch(`${BASE_URL}/api/budgets`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, name, goalAmount }),

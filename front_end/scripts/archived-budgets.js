@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   );
   const backToDashboardBtn = document.getElementById("back-to-dashboard");
   const username = localStorage.getItem("username");
+  const BASE_URL = "http://143.198.59.70:80";
 
   if (!username) {
     alert("No user logged in. Redirecting to login page.");
@@ -18,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   async function fetchArchivedBudgets() {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/budgets/getArchived?username=${username}`
+        `${BASE_URL}/api/budgets/getArchived?username=${username}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch archived budgets");
@@ -77,7 +78,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     async function handleUnarchive() {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/budgets/${budgetId}`,
+          `${BASE_URL}/api/budgets/${budgetId}`,
           {
             method: "PUT",
             headers: { "Content-Type": "application/json" },

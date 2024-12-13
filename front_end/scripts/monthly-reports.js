@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const applyFiltersBtn = document.getElementById("apply-filters");
   const budgetFilter = document.getElementById("budget-filter");
   const categoryFilter = document.getElementById("category-filter");
+  const BASE_URL = "http://143.198.59.70:80";
 
   const username = localStorage.getItem("username"); // Assume username is stored in localStorage
 
@@ -16,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fetch and display reports
   async function fetchMonthlyReports(budgetId = "", category = "") {
     try {
-      const url = `http://localhost:5000/api/reports/monthly?username=${username}${
+      const url = `${BASE_URL}/api/reports/monthly?username=${username}${
         budgetId ? `&budgetId=${budgetId}` : ""
       }${category ? `&category=${category}` : ""}`;
 
@@ -81,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Example: Fetch budgets for the dropdown
     try {
       const response = await fetch(
-        `http://localhost:5000/api/dashboard?username=${username}`
+        `${BASE_URL}/api/dashboard?username=${username}`
       );
       if (response.ok) {
         const data = await response.json();

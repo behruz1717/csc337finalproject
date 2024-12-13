@@ -11,13 +11,19 @@ const settingsRouter = require("./routes/settings");
 const messagesRouter = require("./routes/messages");
 
 const app = express();
-const PORT = 5000;
+const PORT = 80;
+const HOST = "0.0.0.0"; //bind to all interfaces
 
 // Middleware
 app.use(express.json());
 
 // Serve static files from front_end directory
 app.use(express.static(path.join(__dirname, "front_end")));
+
+// Redirect root URL to the landing page
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "front_end/pages/landing.html"));
+});
 
 // Connect to MongoDB
 mongoose
@@ -41,6 +47,6 @@ app.use("/api/settings", settingsRouter);
 app.use("/api/messages", messagesRouter);
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Server running on http://${HOST}:${PORT}`);
 });

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateUsernameForm = document.getElementById("update-username-form");
   const deleteAccountBtn = document.getElementById("delete-account-btn");
   const backToDashboardBtn = document.getElementById("back-to-dashboard");
-
+  const BASE_URL = "http://143.198.59.70:80";
   const currentUsername = localStorage.getItem("username"); // Assume userId is stored in localStorage
 
   if (!currentUsername) {
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/settings/update-username`,
+        `${BASE_URL}/api/settings/update-username`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/settings/delete-account",
+        `${BASE_URL}/api/settings/delete-account`,
         {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const backToDashboardBtn = document.getElementById("back-to-dashboard");
-
+  const BASE_URL = "http://143.198.59.70:80";
   backToDashboardBtn.addEventListener("click", () => {
     window.location.href = "/pages/dashboard.html";
   });
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   async function fetchBudgetDetails() {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/budgets/${budgetId}`
+        `${BASE_URL}/api/budgets/${budgetId}`
       );
       if (!response.ok) {
         const errorData = await response.json();
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/budgets/${budgetId}`,
+        `${BASE_URL}/api/budgets/${budgetId}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     async function handleArchive() {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/budgets/${budgetId}`,
+          `${BASE_URL}/api/budgets/${budgetId}`,
           {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
@@ -213,8 +213,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const method = editingExpenseId ? "PUT" : "POST";
     const url = editingExpenseId
-      ? `http://localhost:5000/api/expenses/${editingExpenseId}`
-      : `http://localhost:5000/api/expenses`;
+      ? `${BASE_URL}/api/expenses/${editingExpenseId}`
+      : `${BASE_URL}/api/expenses`;
 
     try {
       const response = await fetch(url, {
@@ -260,7 +260,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     async function handleDelete() {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/expenses/${expenseId}`,
+          `${BASE_URL}/api/expenses/${expenseId}`,
           {
             method: "DELETE",
           }

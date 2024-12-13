@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const inboxMessagesContainer = document.getElementById("inbox-messages");
   const sentMessagesContainer = document.getElementById("sent-messages");
 
+  const BASE_URL = "http://143.198.59.70:80";
   const username = localStorage.getItem("username");
 
   if (!username) {
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function fetchInbox() {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/messages/inbox/${username}`
+        `${BASE_URL}/api/messages/inbox/${username}`
       );
       const data = await response.json();
 
@@ -40,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function fetchSent() {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/messages/sent/${username}`
+        `${BASE_URL}/api/messages/sent/${username}`
       );
       const data = await response.json();
 
@@ -98,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const content = document.getElementById("message-content").value;
 
     try {
-      const response = await fetch("http://localhost:5000/api/messages/send", {
+      const response = await fetch(`${BASE_URL}/api/messages/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -129,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/messages/${messageId}`,
+        `${BASE_URL}/api/messages/${messageId}`,
         {
           method: "DELETE",
         }
